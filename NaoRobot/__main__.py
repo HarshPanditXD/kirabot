@@ -91,9 +91,9 @@ buttons = [
                 [InlineKeyboardButton(text="About", callback_data="Nao_"),
                 [
                     InlineKeyboardButton(
-            text="Basic help", callback_data="Nao_basichelp"
-        ),
-                    InlineKeyboardButton("❤️ Donate", url=f"https://t.me/{OWNER_NAME}"),
+            text="Basic help", callback_data="Nao_basichelp"),
+        
+                    InlineKeyboardButton(text="Help & Commands❔", callback_data="help_back"),
                 ],
                 [
                     InlineKeyboardButton(
