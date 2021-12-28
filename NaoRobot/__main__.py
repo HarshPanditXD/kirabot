@@ -81,31 +81,34 @@ Akira a powerful group management bot built to help you manage your group!
 Hit the /help or tap on button to se available command on me.
 """
 
-buttons = [
-        [
-        InlineKeyboardButton(
-                        "➕ Add me to your Group ➕",
+reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton("⚔️ ʙᴀɴᴛᴜᴀɴ", callback_data=f"help+1"),
+                    InlineKeyboardButton(
+                        "ᴛᴀᴍʙᴀʜᴋᴀɴ ➕",
                         url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
-                    )
-                ],
-                [InlineKeyboardButton(text="About", callback_data="Nao_"),
-                [
-                    InlineKeyboardButton(
-            text="Basic help", callback_data="Nao_basichelp"),
-        
-                    InlineKeyboardButton(text="Help & Commands❔", callback_data="help_back"),
-                ],
-                [
-                    InlineKeyboardButton(
-                        "👥 Official Group", url=f"https://t.me/{GROUP_SUPPORT}"
-                    ),
-                    InlineKeyboardButton(
-                        "📣 Official Channel", url=f"https://t.me/{UPDATES_CHANNEL}"
                     ),
                 ],
                 [
                     InlineKeyboardButton(
-                        "🌐 Source Code", url="https://github.com/levina-lab/video-strea                 
+                        "👥 ɢʀᴏᴜᴘ", url=f"https://t.me/{SUPPORT_GROUP}"
+                    ),
+                    InlineKeyboardButton(
+                        "ᴄʜᴀɴɴᴇʟ 📣", url=f"https://t.me/{UPDATES_CHANNEL}"
+                    ),
+                ],
+                [
+                    InlineKeyboardButton("🌟 ɢɪᴛ ʜᴜʙ 🌟", url=f"{SOURCE_CODE}"),
+                    InlineKeyboardButton(
+                        "💵 ꜱᴀᴡᴇʀɴʏᴀ", url="https://trakteer.id/kenkansaja/tip"
+                    ),
+                ],
+            ]
+        ),
+        reply_to_message_id=message.message_id,
+    )
+
 
 HELP_STRINGS = """
 *Main* commands available:
