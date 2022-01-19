@@ -74,40 +74,48 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-[🌈](https://telegra.ph/file/2c8fbe1b7a26f184a247a.jpg) 'Hai there i'm' [Akira](https://t.me/Akiramanagerbot)
-────────────────────
-Akira a powerful group management bot built to help you manage your group!
-────────────────────
-Hit the /help or tap on button to se available command on me.
+────「 [neko](https://telegra.ph/file/38559b4da168432999bb8.jpg) 」────
+*Hola! {},*
+*I am an Anime themed advance group management bot with a lot of Features.*
+➖➖➖➖➖➖➖➖➖➖➖➖➖
+• *Uptime:* `{}`
+• `{}` *users, across* `{}` *chats.*
+• *thnx to @NekoXRobot for neko robot repo*
+➖➖➖➖➖➖➖➖➖➖➖➖➖
+➛ Try The Help Buttons Below To Know My Abilities ××
 """
 
 buttons = [
-        [
-        InlineKeyboardButton(
-            text="➕️ Add Akira to tour group ➕️", url="t.me/Akiramanagerbot?startgroup=true"),
-    ],
     [
-        InlineKeyboardButton(text="About", callback_data="Nao_"),
-        InlineKeyboardButton(
-            text="Basic help", callback_data="Nao_basichelp"
-        ),
-    ],
-    [
-        InlineKeyboardButton(text="Help & Commands❔", callback_data="help_back"),
-    ],
-]
+                        InlineKeyboardButton(
+                            text="Add Neko To Your Group",
+                            url="t.me/NekoXRobot?startgroup=true")
+                    ],
+                   [
+                       InlineKeyboardButton(text="[► Help ◄]", callback_data="help_back"),
+                       InlineKeyboardButton(text="[► Repo ◄]", url="https://GitHub.com/Hodacka/NekoRobot-2"),
+                       InlineKeyboardButton(text="[► Network ◄]", url="https://t.me/Yuki_Network"),
+                     ],
+                    [                  
+                       InlineKeyboardButton(
+                             text="Support",
+                             url="https://t.me/nekoxsupport"),
+                       InlineKeyboardButton(
+                             text="Updates",
+                             url="https://t.me/noha_updates")
+                     ], 
+    ]
+
+
 
 HELP_STRINGS = """
-*Main* commands available:
- ➛ /help: PM's you this message.
- ➛ /help <module name>: PM's you info about that module.
- ➛ /donate: information on how to donate!
- ➛ /settings:
-   ❂ in PM: will send you your settings for all supported modules.
-   ❂ in a group: will redirect you to pm, with all that chat's settings.
-"""
+`Hi.. I'm` [Neko💜]("https://telegra.ph/file/85ce7f2dc743fb5c0c93a.jpg") 
+`Click on the buttons below to get about Cute Futures..`"""
 
-DONATE_STRING = """❂ I'm Free for Everyone ❂"""
+
+NEKO_IMG = "https://telegra.ph/file/8fa070dfa60da6c024ac3.mp4"
+
+DONATE_STRING = """Hey , If you want Donate means Give a Star ⭐ to this [Repo](https://GitHub.com/Hodacka/NekoRobot-2)"""
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -126,8 +134,6 @@ for module_name in ALL_MODULES:
 
     if imported_module.__mod_name__.lower() not in IMPORTED:
         IMPORTED[imported_module.__mod_name__.lower()] = imported_module
-    else:
-        raise Exception("Can't have two modules with the same name! Please change one")
 
     if hasattr(imported_module, "__help__") and imported_module.__help__:
         HELPABLE[imported_module.__mod_name__.lower()] = imported_module
